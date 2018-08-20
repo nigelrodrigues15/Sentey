@@ -40,28 +40,28 @@ This project will be implemented with the following technologies:
 
 **Day 1**: 
 
-- [x] Create index.html and sample CSS file
-- [x] Learn how to access the twitter API
-- [x] Create a static dummy form on the webpage
+- [ ] Create index.html and sample CSS file
+- [ ] Learn how to access the twitter API
+- [ ] Create a static dummy form on the webpage
 
 **Day 2**: 
 
-- [x] Access the twitter api
-- [x] Recieve tweets from twitter in JSON format
-- [x] Connect it to the form on the page
-- [x] Display a few of the tweets on the webpage
+- [ ] Access the twitter api
+- [ ] Recieve tweets from twitter in JSON format
+- [ ] Connect it to the form on the page
+- [ ] Display a few of the tweets on the webpage
 
 **Day 3**:
 
-- [x] Learn how to use sentiment API
-- [x] Learn how to use D3 library
-- [x] get resulting data from sentiment API
+- [ ] Learn how to use sentiment API
+- [ ] Learn how to use D3 library
+- [ ] get resulting data from sentiment API
 
 **Day 4**:
 
-- [x] Format the data from the sentiment API
-- [x] Get a chart on the webpage
-- [x] Style the webpage
+- [ ] Format the data from the sentiment API
+- [ ] Get a chart on the webpage
+- [ ] Style the webpage
 
 
 ## Bonus features
