@@ -30,11 +30,11 @@ const twitter = new _twitter({
   bearer_token: keys.bearer_token
 });
 // create a search route
-app.get('/search', (request, appResponse) => {
+app.get('/search/keyword', (request, appResponse) => {
   // let p = new Promise((resolve, reject) => {
   // debugger
-  twitter.get('search/tweets', {q: `${request.query.match_params}`, count: 100}, function(error, tweets, twitterResponse) {
-    let b = appResponse;
+  twitter.get('search/tweets', {q: `${request.query.match_params}`, count: 100, lang: 'en'}, function(error, tweets, twitterResponse) {
+    // let b = appResponse;
     // debugger
     appResponse.send(tweets);
   });

@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // });
   //
   const test = () => {
-    let query = "#foodie";
+    let query = "food";
     // debugger
-    axios.get(`/search?match_params=trump`)
+    axios.get(`/search/keyword?match_params=${query}`)
     .then((response) => {
       console.log(response);
       // debugger
@@ -26,7 +26,5 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.test = test;
-  window.test2 = 5;
-
-
+  test();
 });
