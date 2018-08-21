@@ -12,19 +12,26 @@ document.addEventListener('DOMContentLoaded', () => {
   //     console.log(error);
   // });
   //
-  const test = () => {
-    let query = "food";
-    // debugger
+  const twitterPosts = (query) => {
     axios.get(`/search/keyword?match_params=${query}`)
     .then((response) => {
       console.log(response);
-      // debugger
     })
     .catch(function (error) {
       console.log(error);
     });
   };
 
-  window.test = test;
-  test();
+  const analysis = () => {
+    axios.post(`/analysis`, {post: "i like to play sports and eat icecream"})
+    .then((response) => {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  };
+
+  window.twitterPosts = twitterPosts;
+  window.analysis = analysis;
 });
