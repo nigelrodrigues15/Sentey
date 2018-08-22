@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10vh 50vh 30vh 10vh;
+}
+.header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: black;
+    opacity: 0.75;
+    color: white;
+}
+.charts {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: green;
+  opacity: 0.75;
+}
+.tweets {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: blue;
+  opacity: 0.75;
+}
+div[class^="tweet-"] {
+    border: 1px solid black;
+}
+.footer {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: red;
+  opacity: 0.75;
+}

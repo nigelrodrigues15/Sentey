@@ -52,6 +52,7 @@ client
     console.log(`Text: ${request.body.text}`);
     console.log(`Sentiment score: ${sentiment.score}`);
     console.log(`Sentiment magnitude: ${sentiment.magnitude}`);
+    appResponse.send(sentiment);
   })
   .catch(err => {
     console.error('ERROR:', err);
