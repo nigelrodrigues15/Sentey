@@ -1,15 +1,19 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const path = require('path');
-const fetch = require('node-fetch');
+const path = require("path");
+const fetch = require("node-fetch");
 const PORT = process.env.PORT || 8000; // process.env accesses heroku's environment variables
-const _twitter = require('twitter');
-const keys = require('./keys');
-const MeaningCloud = require('meaning-cloud');
-app.use(express.static('public'));
+const _twitter = require("twitter");
+const keys = require("./keys");
+const bodyParser = require("body-parser");
+const axios = require("axios");
+const language = require("@google-cloud/language");
+// const MeaningCloud = require('meaning-cloud');
+app.use(express.static("public"));
+app.use(bodyParser.json());
 
-app.get('/', (request, res) => {
-  res.sendFile(path.join(__dirname, './public/index.html'));
+app.get("/", (request, res) => {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 const twitter = new _twitter({
@@ -17,40 +21,67 @@ const twitter = new _twitter({
   consumer_secret: keys.consumer_secret,
   bearer_token: keys.bearer_token
 });
+
+const client = new language.LanguageServiceClient();
 // create a twitter search route
-app.get('/search/keyword', (request, appResponse) => {
+app.get("/search/keyword", (request, appResponse) => {
   // let p = new Promise((resolve, reject) => {
-    twitter.get('search/tweets', {q: `${request.query.match_params}`, count: 10, lang: 'en'}, function(error, tweets, twitterResponse) {
+  twitter.get(
+    "search/tweets",
+    { q: `${request.query.match_params}`, count: 10, lang: "en" },
+    function(error, tweets, twitterResponse) {
       appResponse.send(tweets);
-    });
-    // });
-    // return p;
-  });
-  // .then((body) => {
-    //   let results = JSON.parse(body);
-    //   console.log(results);
-    //   response.send(results);
-    // });
-
-// create a analysis route
-app.get('/analysis', (request, appResponse) => {
-  const meaning = MeaningCloud({
-    key: 'd2e78b07ec9970246fa928d905a24224',
-    endpoints: {
-      user_profiling          : '/userprofiling-2.0',
-      text_classification     : '/class-1.1',
-      topics_extraction       : '/topics-1.2',
-      sentiment_analysis      : '/sentiment-2.0',
-      language_identification : '/lang-1.1',
-      parsing                 : '/parser-1.2',
-      spelling                : '/stilus-1.2',
-      reputation              : '/reputation-1.0'
     }
-  });
-  appResponse.send(meaning);
-  });
+  );
+  // });
+  // return p;
+});
 
-    app.listen(PORT, () => {
+// Sentiment
+app.post("/analysis", (request, appResponse) => {
+// let p = new Promise((resolve, reject) => {
+debugger
+const document = {
+  content: request.body.text,
+  type: 'PLAIN_TEXT',
+};
+client
+  .analyzeSentiment({ document: document })
+  .then(results => {
+    const sentiment = results[0].documentSentiment;
+    console.log(`Text: ${request.body.text}`);
+    console.log(`Sentiment score: ${sentiment.score}`);
+    console.log(`Sentiment magnitude: ${sentiment.magnitude}`);
+  })
+  .catch(err => {
+    console.error('ERROR:', err);
+  });
+// });
+// return p;
+});
+
+// .then((body) => {
+//   let results = JSON.parse(body);
+//   console.log(results);
+//   response.send(results);
+// });
+
+// app.post("/analysis", (request, appResponse) => {
+//   axios
+//     .post(`https://api.meaningcloud.com/topics-2.0`, {
+//       key: "d2e78b07ec9970246fa928d905a24224",
+//       model: "IAB",
+//       txt:
+//         "Stuffed courgette flower finished with a herb oil & grated black truffle 🌼 Fancy a DISCOUNT? Dine with us using our Midweek Dining vouchers - see pinned tweet for vouchers, ends 31st of August. #FineDining #StAlbans #Foodie #Plating #Offer"
+//     })
+//     .then(resp => {
+//       debugger;
+//       console.log(resp);
+//     });
+//   appResponse.send(request);
+// });
+
+app.listen(PORT, () => {
   console.log(__dirname);
   console.log(`listening on ${PORT}`);
 });
@@ -60,10 +91,10 @@ app.get('/analysis', (request, appResponse) => {
 // make api call using fetch
 // fetch(`http://openlibrary.org/api/books?bibkeys=ISBN:${request.params.isbn}&format=json&jscmd=data`)
 // .then((response) => {
-  //     return response.text();
-  // }).then((body) => {
-    //     let results = JSON.parse(body)
-    //     console.log(results)   // logs to server
+//     return response.text();
+// }).then((body) => {
+//     let results = JSON.parse(body)
+//     console.log(results)   // logs to server
 //     response.send(results) // sends to frontend
 //   });
 // });
