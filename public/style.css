@@ -14,6 +14,18 @@
     background-color: black;
     opacity: 0.75;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter {
+    padding: 2px 20px;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+.submit {
+    padding: 2px 5px;
+    border-radius: 2px;
 }
 .charts {
   grid-column-start: 1;

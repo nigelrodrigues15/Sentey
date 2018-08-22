@@ -40,7 +40,7 @@ app.get("/search/keyword", (request, appResponse) => {
 // Sentiment
 app.post("/analysis", (request, appResponse) => {
 // let p = new Promise((resolve, reject) => {
-debugger
+// debugger
 const document = {
   content: request.body.text,
   type: 'PLAIN_TEXT',

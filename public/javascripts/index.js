@@ -1,18 +1,8 @@
 // const axios = require('axios');
 import axios from "axios";
 // const wordChart = require('./wordCloud');
-// import wordChart from './wordCloud';
+import { postFreq } from "./wordCloud";
 document.addEventListener("DOMContentLoaded", () => {
-  //
-  // let isbn = '0201558025';
-  // axios.get(`/books/${isbn}`)
-  // .then((response) => {
-  //     console.log(response);
-  // })
-  // .catch(function (error) {
-  //     console.log(error);
-  // });
-  //
 
   let posts;
   const twitterPosts = query => {
@@ -20,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .get(`/search/keyword?match_params=${query}`)
       .then(response => {
         console.log(response.data.statuses);
-        return response.data.statuses;
+        postFreq(response.data.statuses);
         // wordChart.postFreq(posts);
       })
       .catch(function(error) {
