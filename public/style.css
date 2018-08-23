@@ -1,31 +1,31 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 10vh 50vh 30vh 10vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 10vh 50vh 30vh 10vh;
 }
 .header {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    background-color: black;
-    opacity: 0.75;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: black;
+  opacity: 0.75;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .filter {
-    padding: 2px 20px;
-    margin-right: 10px;
-    border-radius: 2px;
+  padding: 2px 20px;
+  margin-right: 10px;
+  border-radius: 2px;
 }
 .submit {
-    padding: 2px 5px;
-    border-radius: 2px;
+  padding: 2px 5px;
+  border-radius: 2px;
 }
 .charts {
   grid-column-start: 1;
@@ -41,8 +41,21 @@
   background-color: blue;
   opacity: 0.75;
 }
-div[class^="tweet-"] {
-    border: 1px solid black;
+.tweet-1-img,
+.tweet-2-img,
+.tweet-3-img,
+.tweet-4-img {
+  display: inline-block;
+}
+#profileImg {
+  width: 30px;
+  border-radius: 15px;
+}
+.tweet-1-author,
+.tweet-2-author,
+.tweet-3-author,
+.tweet-4-author {
+  display: inline-block;
 }
 .footer {
   grid-column-start: 1;

@@ -19,7 +19,7 @@ export const postFreq = function(posts) {
     "her",
     "i",
     "i'm",
-    "and"
+    "https"
   ];
   for (let i = 0; i < posts.length; i++) {
     // debugger
@@ -37,10 +37,13 @@ export const postFreq = function(posts) {
   for (let k = 0; k < Object.keys(freq).length; k++) {
     // debugger
     let keys = Object.keys(freq);
-    data.push({
-      name: keys[k],
-      value: freq[keys[k]]
-    });
+    // && freq[keys[k]] > 1
+      if (keys[k].length > 3 ) {
+      data.push({
+        name: keys[k],
+        value: freq[keys[k]]
+      });
+    }
   }
   console.log(data);
   createChart(data);
@@ -83,7 +86,7 @@ export const createChart = function(data) {
           },
           emphasis: {
             shadowBlur: 10,
-            shadowColor: "#333",
+            shadowColor: "#333"
           }
         },
         data: data
@@ -91,11 +94,11 @@ export const createChart = function(data) {
     ]
   };
 
-    // maskImage.onload = function() {
-    //   option.series[0].maskImage;
+  // maskImage.onload = function() {
+  //   option.series[0].maskImage;
   chart.setOption(option);
-    // };
-    //   maskImage.src = "twitterLogo.png";
+  // };
+  //   maskImage.src = "twitterLogo.png";
   window.onresize = function() {
     chart.resize();
   };
