@@ -9,6 +9,6 @@ export const handleTweets = function(posts) {
     $(tweetI).html(`<img id='profileImg' src='${image}'/>`);
     $(tweetA).text(`@${author}`);
     $(tweetP).text(`${post}`);
-    debugger;
+    // debugger;
   }
 };

@@ -5,8 +5,8 @@
 
 .main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 10vh 50vh 20vh 10vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10vh 70vh 20vh 50vh;
 }
 .header {
   grid-column-start: 1;
@@ -19,7 +19,7 @@
   align-items: center;
 }
 .filter {
-  padding: 2px 20px;
+  padding: 2px 25px 2px 0px;
   margin-right: 10px;
   border-radius: 2px;
 }
@@ -27,11 +27,19 @@
   padding: 2px 5px;
   border-radius: 2px;
 }
+.submit:hover {
+    color: white;
+    background-color: #1da1f2;
+}
 .charts {
   grid-column-start: 1;
   grid-column-end: 3;
-  background-color: green;
-  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.charts img {
+    height: 75vh;
 }
 .tweets {
   grid-column-start: 1;

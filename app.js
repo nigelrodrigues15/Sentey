@@ -28,7 +28,7 @@ app.get("/search/keyword", (request, appResponse) => {
   // let p = new Promise((resolve, reject) => {
   twitter.get(
     "search/tweets",
-    { q: `${request.query.match_params}`, count: 10, lang: "en" },
+    { q: `${request.query.match_params}`, count: 20, lang: "en" },
     function(error, tweets, twitterResponse) {
       appResponse.send(tweets);
     }

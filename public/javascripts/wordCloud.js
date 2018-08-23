@@ -38,7 +38,7 @@ export const postFreq = function(posts) {
     // debugger
     let keys = Object.keys(freq);
     // && freq[keys[k]] > 1
-      if (keys[k].length > 3 ) {
+    if (keys[k].length > 3) {
       data.push({
         name: keys[k],
         value: freq[keys[k]]
@@ -66,7 +66,7 @@ export const createChart = function(data) {
         sizeRange: [12, 50],
         rotationRange: [-90, 90],
         shape: "pentagon",
-        // width: 600,
+        // width: 700,
         // height: 400,
         // maskImage: maskImage,
         drawOutOfBound: false,
@@ -94,11 +94,14 @@ export const createChart = function(data) {
     ]
   };
 
-  // maskImage.onload = function() {
-  //   option.series[0].maskImage;
-  chart.setOption(option);
-  // };
-  //   maskImage.src = "twitterLogo.png";
+//   maskImage.onload = function() {
+    // debugger
+    // option.series[0].maskImage;
+    chart.setOption(option);
+//   };
+    // maskImage.src = "./TwitterLogo.png";
+
+  console.log(maskImage);
   window.onresize = function() {
     chart.resize();
   };
