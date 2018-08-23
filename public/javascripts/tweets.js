@@ -1,5 +1,5 @@
 export const handleTweets = function(posts) {
-  for (let i = 1; i < 5; i++) {
+  for (let i = 1; i < 4; i++) {
     let post = posts[i].text;
     let author = posts[i].user.screen_name;
     let image = posts[i].user.profile_image_url_https;

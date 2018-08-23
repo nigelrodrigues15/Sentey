@@ -6,7 +6,7 @@
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 10vh 50vh 30vh 10vh;
+  grid-template-rows: 10vh 50vh 20vh 10vh;
 }
 .header {
   grid-column-start: 1;
@@ -37,9 +37,9 @@
   grid-column-start: 1;
   grid-column-end: 3;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: blue;
-  opacity: 0.75;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* background-color: blue; */
+  /* opacity: 0.75; */
 }
 .tweet-1-img,
 .tweet-2-img,
@@ -47,15 +47,49 @@
 .tweet-4-img {
   display: inline-block;
 }
+.tweet-1 > div,
+.tweet-2 > div,
+.tweet-3 > div,
+.tweet-4 > div {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.tweet-1,
+.tweet-2,
+.tweet-3,
+.tweet-4 {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+.tweet-1:hover,
+.tweet-2:hover,
+.tweet-3:hover,
+.tweet-4:hover {
+  box-shadow: 0 0 1px 1px #2d3032;
+}
+.tweets {
+  padding: 15px;
+}
 #profileImg {
   width: 30px;
   border-radius: 15px;
+  margin-right: 10px;
 }
 .tweet-1-author,
 .tweet-2-author,
 .tweet-3-author,
 .tweet-4-author {
   display: inline-block;
+  font-size: 11pt;
+}
+.tweet-1-post,
+.tweet-2-post,
+.tweet-3-post,
+.tweet-4-post {
+  font-size: 10pt;
 }
 .footer {
   grid-column-start: 1;
