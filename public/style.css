@@ -6,30 +6,54 @@
 .main {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 10vh 70vh 20vh 50vh;
+  grid-template-rows: 10vh 65vh 25vh 100vh;
 }
 .header {
   grid-column-start: 1;
   grid-column-end: 3;
-  background-color: black;
-  opacity: 0.75;
+  background-color: #55acee;
+  /* opacity: 0.6; */
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .filter {
-  padding: 2px 25px 2px 0px;
-  margin-right: 10px;
+  padding: 5px 35px 5px 5px;
+  margin-right: 20px;
   border-radius: 2px;
+  background-color: #55acee;
+  color: #d3d3d3;
+  border: 1px solid #d3d3d3;
+}
+.filter::placeholder {
+  color: #d3d3d3;
+}
+.filter:focus {
+  outline: none;
+  color: white;
+  border: 1px solid white;
+}
+.filter:hover {
+  border: 1px solid white;
+}
+.filter:hover::placeholder{
+  color: white;
 }
 .submit {
-  padding: 2px 5px;
+  padding: 5px 10px;
   border-radius: 2px;
+  background-color: #55acee;
+  border: 1px solid #d3d3d3;
+  color: #d3d3d3;
 }
 .submit:hover {
-    color: white;
-    background-color: #1da1f2;
+  color: white;
+  border: 1px solid white;
+  background-color: #55acee;
+}
+.submit:focus {
+  outline: none;
 }
 .charts {
   grid-column-start: 1;
@@ -39,7 +63,7 @@
   justify-content: center;
 }
 .charts img {
-    height: 75vh;
+  height: 70vh;
 }
 .tweets {
   grid-column-start: 1;
@@ -68,15 +92,16 @@
 .tweet-3,
 .tweet-4 {
   margin: 5px;
+  margin-bottom: 25px;
   padding: 5px;
-  border: 1px solid gray;
+  border: 1px solid #55acee;
   border-radius: 4px;
 }
 .tweet-1:hover,
 .tweet-2:hover,
 .tweet-3:hover,
 .tweet-4:hover {
-  box-shadow: 0 0 1px 1px #2d3032;
+  box-shadow: 0 0 1px 1px #55acee;
 }
 .tweets {
   padding: 15px;

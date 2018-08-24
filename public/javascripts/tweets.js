@@ -6,9 +6,14 @@ export const handleTweets = function(posts) {
     let tweetI = ".tweet-" + `${i}` + "-img";
     let tweetA = ".tweet-" + `${i}` + "-author";
     let tweetP = ".tweet-" + `${i}` + "-post";
-    $(tweetI).html(`<img id='profileImg' src='${image}'/>`);
-    $(tweetA).text(`@${author}`);
-    $(tweetP).text(`${post}`);
-    // debugger;
+    $(tweetI).html(
+      `<img id='profileImg' class="animated fadeIn" src='${image}'/>`
+    );
+    $(tweetA)
+      .addClass("animated fadeIn")
+      .text(`@${author}`);
+    $(tweetP)
+      .addClass("animated fadeIn")
+      .text(`${post}`);
   }
 };

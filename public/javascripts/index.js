@@ -3,6 +3,7 @@ import axios from "axios";
 // const wordChart = require('./wordCloud');
 import { postFreq } from "./wordCloud";
 import { handleTweets } from "./tweets";
+import { handleSentiment } from "./sentiment";
 document.addEventListener("DOMContentLoaded", () => {
 
   let posts;
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         posts = response.data.statuses;
         postFreq(posts);
         handleTweets(posts);
+        handleSentiment(posts);
         // wordChart.postFreq(posts);
       })
       .catch(function(error) {
@@ -22,9 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   };
 
-
   $(".submit").click(() => twitterPosts($(".filter").val()));
-
 
   const analysis = text => {
     axios
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         text: text
       })
       .then(response => {
+        sentiment;
         console.log(response);
       })
       .catch(function(error) {
