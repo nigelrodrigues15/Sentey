@@ -17,9 +17,9 @@ app.get("/", (request, res) => {
 });
 
 const twitter = new _twitter({
-  consumer_key: keys.consumer_key,
-  consumer_secret: keys.consumer_secret,
-  bearer_token: keys.bearer_token
+  consumer_key: process.env.consumer_key,
+  consumer_secret: process.env.consumer_secret,
+  bearer_token: process.env.bearer_token
 });
 
 const client = new language.LanguageServiceClient();
