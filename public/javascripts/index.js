@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let posts;
   const twitterPosts = query => {
-    // debugger
     axios
       .get(`/search/keyword?match_params=${query}`)
       .then(response => {

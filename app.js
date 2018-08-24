@@ -40,7 +40,6 @@ app.get("/search/keyword", (request, appResponse) => {
 // Sentiment
 app.post("/analysis", (request, appResponse) => {
 // let p = new Promise((resolve, reject) => {
-// debugger
 const document = {
   content: request.body.text,
   type: 'PLAIN_TEXT',
@@ -76,7 +75,6 @@ client
 //         "Stuffed courgette flower finished with a herb oil & grated black truffle 🌼 Fancy a DISCOUNT? Dine with us using our Midweek Dining vouchers - see pinned tweet for vouchers, ends 31st of August. #FineDining #StAlbans #Foodie #Plating #Offer"
 //     })
 //     .then(resp => {
-//       debugger;
 //       console.log(resp);
 //     });
 //   appResponse.send(request);

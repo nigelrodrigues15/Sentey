@@ -11,7 +11,6 @@ export const handleSentiment = function(posts) {
       })
       .then(response => {
         sentiment.push(response.data.magnitude);
-        // debugger
         if (sentiment.length === posts.length - 1) {
           let averageSentiment =
             sentiment.reduce((acc, el) => acc + el, 0) / sentiment.length;
@@ -21,7 +20,6 @@ export const handleSentiment = function(posts) {
         //   $(".sentiment").html(``);
           //   $(".ldBar").text("60");
 
-          // debugger;
             let bar1 = new ldBar("#change");
           let bar2 = document.getElementById("#senti").ldBar;
           bar1.set(65);
