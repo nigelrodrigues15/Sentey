@@ -22,7 +22,6 @@ export const postFreq = function(posts) {
     "https"
   ];
   for (let i = 0; i < posts.length; i++) {
-    // debugger
     let post = posts[i].text.split(" ");
     // console.log(post)
     for (let j = 0; j < post.length; j++) {
@@ -33,9 +32,7 @@ export const postFreq = function(posts) {
       }
     }
   }
-  // debugger
   for (let k = 0; k < Object.keys(freq).length; k++) {
-    // debugger
     let keys = Object.keys(freq);
     // && freq[keys[k]] > 1
     if (keys[k].length > 3 && freq[keys[k]] > 1) {
@@ -95,7 +92,6 @@ export const createChart = function(data) {
   };
 
 //   maskImage.onload = function() {
-    // debugger
     // option.series[0].maskImage;
     chart.setOption(option);
 //   };
