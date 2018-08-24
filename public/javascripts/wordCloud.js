@@ -38,7 +38,7 @@ export const postFreq = function(posts) {
     // debugger
     let keys = Object.keys(freq);
     // && freq[keys[k]] > 1
-    if (keys[k].length > 3) {
+    if (keys[k].length > 3 && freq[keys[k]] > 1) {
       data.push({
         name: keys[k],
         value: freq[keys[k]]
