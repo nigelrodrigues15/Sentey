@@ -1,5 +1,5 @@
 # Sentey
-(Live link)[http://sentey.herokuapp.com/]
+Live link: http://sentey.herokuapp.com/
 ## Background and Overview
 
 Sentey is a data visualization tool that is used to analyze tweets for varying sentiment and emotion. Users will provide a key word or hastag, and Sentey will filter and retrive the lastest tweets that match the specific keyword or hastag and then parse the information for the context it was used in. This data will then be sent for sentiment analysis using Meaning Cloud text analysis API, which will return JSON of the completed analysis. 
