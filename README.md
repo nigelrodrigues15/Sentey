@@ -36,7 +36,7 @@ This project will be implemented with the following technologies:
 - [ ] Microsoft Azure to analyze the retrieved tweets
 
 
-## Implementation Timeline
+## Possible Implementation Timeline
 
 **Day 1**: 
 
