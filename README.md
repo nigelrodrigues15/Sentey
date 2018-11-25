@@ -17,7 +17,7 @@ In Sentey, users will be able to:
 
 # Design Timeline
 
-THe following are preliminary ideas in the process of designing this webpage. 
+The following are preliminary ideas in the process of designing this webpage:
 
 ## Wireframes
 
