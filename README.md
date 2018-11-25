@@ -15,6 +15,7 @@ In Sentey, users will be able to:
 - [ ] Have their filtered tweets analyzed for sentiment
 - [ ] View the analyzed data in graphical form
 
+# Design Timeline
 ## Wireframes
 
 This app will consist of a single screen with an input form to retrieve the keyword or hashtag with a submit button. This would be used to update the data visualization portion of the page.
