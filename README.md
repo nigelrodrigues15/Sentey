@@ -74,3 +74,5 @@ There are many directions in which this project could evolve.
 
 - [ ] Have a tabbed section to visualize the data in many ways
 - [ ] Ability to compare search results
+
+# Issues Encountered
