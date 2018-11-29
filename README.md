@@ -79,4 +79,4 @@ There are many directions in which this project could evolve.
 
 * First time using OAuth
 * Issues with Twitter tokens
-* Implicit implementation of api keys 
+* Implicit implementation of api keys from Google's Natural Language Processing API 
