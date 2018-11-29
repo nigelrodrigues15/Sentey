@@ -76,3 +76,5 @@ There are many directions in which this project could evolve.
 - [ ] Ability to compare search results
 
 # Issues Encountered
+
+* First time using OAuth
