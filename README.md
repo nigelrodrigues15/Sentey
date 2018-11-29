@@ -78,3 +78,4 @@ There are many directions in which this project could evolve.
 # Issues Encountered
 
 * First time using OAuth
+* Issues with Twitter tokens
