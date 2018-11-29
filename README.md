@@ -80,3 +80,4 @@ There are many directions in which this project could evolve.
 * First time using OAuth
 * Issues with Twitter tokens
 * Implicit implementation of API keys from Google's Natural Language Processing API 
+* Code for Sentiment Analysis present but was unable to visualize the data effectively in the time period
